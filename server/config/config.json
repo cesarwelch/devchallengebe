@@ -1,13 +1,11 @@
 {
   "development": {
-    "use_env_variable": "DATABASE_URL"
+  "use_env_variable": "DATABASE_URL"
   },
   "test": {
-    "username": "waiyaki",
-    "password": null,
-    "database": "todos-test",
-    "host": "127.0.0.1",
-    "port": 5432,
-    "dialect": "postgres"
+    "use_env_variable": "DATABASE_URL"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
   }
 }
