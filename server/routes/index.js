@@ -7,4 +7,5 @@ module.exports = (app) => {
 
   app.post('/api/expenses', expensesController.create);
   app.get('/api/expenses', expensesController.list);
+  app.get('/api/expenses/bydate', expensesController.listByDate);
 };

@@ -1,4 +1,6 @@
 const Expense = require('../models').Expense;
+const sequelize = require('sequelize');
+const Op = sequelize.Op;
 
 module.exports = {
   create(req, res) {
@@ -17,4 +19,15 @@ module.exports = {
 	    .then(todos => res.status(200).send(todos))
 	    .catch(error => res.status(400).send(error));
 	},
+  listByDate(req, res) {
+    console.log(req.body.startDate)
+      return Expense.findAll({
+            where: {
+                createdAt: {
+                    [Op.between]: [req.body.startDate, req.body.endDate]
+                }
+            }
+        }).then(todos => res.status(200).send(todos))
+          .catch(error => res.status(400).send(error));
+  }
 };
