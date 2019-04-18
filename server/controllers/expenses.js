@@ -20,7 +20,6 @@ module.exports = {
 	    .catch(error => res.status(400).send(error));
 	},
   listByDate(req, res) {
-    console.log(req.body.startDate)
       return Expense.findAll({
             where: {
                 createdAt: {
